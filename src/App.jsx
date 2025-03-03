@@ -28,13 +28,15 @@ const router = createBrowserRouter([
   },
 ]);
 
+// Create a client
 const queryClient = new QueryClient();
 
 export default function App() {
   return (
+    // Provide the client to your App
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router}>
-        <div className="bg-gray-700 h-screen w-full">
+        <div className="bg-gray-700">
           <h1></h1>
         </div>
       </RouterProvider>

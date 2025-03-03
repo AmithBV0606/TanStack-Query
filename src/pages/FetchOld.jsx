@@ -18,13 +18,15 @@ export default function FetchOld() {
   }, []);
 
   return (
-    <div className="">
-      <ul className="mx-32">
+    <div className="h-auto">
+      <ul className="mx-80">
         {posts?.map((post) => {
+          const { id, title, body } = post;
+
           return (
-            <li key={post.id} className="space-y-6 my-4 p-6 border-l-2 border-white rounded-xl bg-gray-700 text-start">
-              <p className="text-xl font-bold">{post.title}</p>
-              <p className="text-sm font-light">{post.body}</p>
+            <li key={id} className="space-y-6 my-4 p-6 border-l-2 border-white rounded-xl bg-gray-700 text-start">
+              <p className="text-xl font-bold">{title}</p>
+              <p className="text-sm font-light">{body}</p>
             </li>
           );
         })}

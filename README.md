@@ -31,3 +31,11 @@
 - **new QueryClient() :** This creates a new QueryClient instance with default settings. You can configure it with options if needed (e.g., setting cache time, stale time, etc.).
 
 - ** QueryClientProvider :** This component is part of react-query and is used to provide the QueryClient instance to your entire React app (or a portion of it). This makes the query client available via React's context API so that all the components in the tree can use the useQuery, useMutation, and other hooks provided by react-query.
+
+### queryKey 
+
+- The queryKey is typically an array or string that uniquely identifies a query.
+
+- It allows React Query to determine if the data in the cache is associated with a particular request.
+
+- It is used to cache the data with a specific key and refetch or update data when certain dependencies change.
