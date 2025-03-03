@@ -30,7 +30,7 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <RouterProvider router={router}>
-      <div>
+      <div className="bg-gray-700 h-screen w-full">
         <h1>TanStack-Query</h1>
       </div>
     </RouterProvider>
