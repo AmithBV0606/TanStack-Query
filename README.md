@@ -1,12 +1,25 @@
-# React + Vite
+# TanStack-Query
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**NOTE :** TanStack-Query === React-Query
 
-Currently, two official plugins are available:
+- It's a library that helps you manage the state of data, you fetch from servers, like API's, in your React application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- It manages server-side state in React.
 
-## Expanding the ESLint configuration
+### Need of TanStack-Query : 
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<img src="./assets/Pic-1.png" />
+
+- If TanStack-Query is not used, we have to do manage the state of data coming form the server, using `useState`, `useEffect`, `contextAPI`, `Redux-Toolkit`, `Zustand`,  etc. 
+
+### Advantages of using TanStack-Query : 
+
+- **Data Fetching Made Easy :** With a simple useQuery hook, fetching data becomes super easy.
+
+- **Built-in Loading and Error States :** No need to write custom code for handling loading, errors, or success states.
+
+- **Automatic Caching :** React Query automatically caches your data.
+
+- **Background Refetching :** If your data gets stale or out of date, TanStack Query can refetch it in the background.
+
+- **Pagination and Infinite Scrolling :** Handling pagination or infinite scrolling? React Query has you covered with tools specifically designed for those complex use cases.
