@@ -45,3 +45,13 @@
 - **useQuery** : Fetches and reads data (GET requests) from an API and automatically caches the result.
 
 - **useMutation** : Used for creating, updating or deleting data (POST, PUT, DELETE requests) and allows triggering manual side effects.
+
+### Garbage collection in React-Query | gcTime - (Garbage Collection Time) : 
+
+- In React Query v5, the `cacheTime` option in React Query has been renamed to `gcTime`.
+
+- When you use React Query to get data, it saves the results in a local cache. This means if you ask for the same data again, React Query will give you the saved data instead of making another API request. The cache updates automatically if the data changes, so you always get the latest information.
+
+- **Use Case :** Imagine you're fetching a list of users. If you go back to the same page, React Query will show the saved list from the cache instead of reloading it from the server, making your app faster. If a new user is added, React Query will automatically update the list.
+
+- By default, inactive queries are garbage collected after 5 minutes. This means that if a query is not being used for 5 minutes, the cache for that query will be cleaned up.
