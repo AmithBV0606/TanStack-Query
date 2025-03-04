@@ -3,19 +3,32 @@ import { fetchPosts } from "../API/api";
 
 export default function FetchOld() {
   const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   const getPostsData = async () => {
     try {
       const res = await fetchPosts();
       res.status === 200 ? setPosts(res.data) : [];
     } catch (error) {
-      console.log("Error is : ", error);
+      setIsError(true);
+      console.error("The error is : ", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
     getPostsData();
   }, []);
+
+  if (isLoading) {
+    return <div className="text-center">Page is loading......</div>;
+  }
+
+  if (isError) {
+    return <div>Error has occurred....</div>;
+  }
 
   return (
     <div className="h-auto">
@@ -24,7 +37,10 @@ export default function FetchOld() {
           const { id, title, body } = post;
 
           return (
-            <li key={id} className="space-y-6 my-4 p-6 border-l-2 border-white rounded-xl bg-gray-700 text-start">
+            <li
+              key={id}
+              className="space-y-6 my-4 p-6 border-l-2 border-white rounded-xl bg-gray-700 text-start"
+            >
               <p className="text-xl font-bold">{title}</p>
               <p className="text-sm font-light">{body}</p>
             </li>
