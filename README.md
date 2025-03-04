@@ -55,3 +55,18 @@
 - **Use Case :** Imagine you're fetching a list of users. If you go back to the same page, React Query will show the saved list from the cache instead of reloading it from the server, making your app faster. If a new user is added, React Query will automatically update the list.
 
 - By default, inactive queries are garbage collected after 5 minutes. This means that if a query is not being used for 5 minutes, the cache for that query will be cleaned up.
+
+### staleTime
+
+In React Query, staleTime is a configuration option that determines how long fetched data is considered fresh before it needs to be refetched.
+
+Here's how it works:
+
+**Fresh Data :**
+When data is initially fetched or updated, it's considered fresh.
+
+**Stale Data :**
+After the staleTime duration (specified in milliseconds) elapses, the data is considered stale.
+
+**Default Value :**
+The default staleTime is 0, meaning data becomes stale immediately after being fetched. This ensures data is always up-to-date but can lead to frequent refetching.

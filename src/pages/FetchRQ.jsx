@@ -17,6 +17,7 @@ export default function FetchRQ() {
     queryKey: ["posts"], // useState
     queryFn: getPostsData, //useEffect
     // gcTime: 5000,
+    staleTime: 5000,
   });
 
   // Conditional rendering based on loading and error state.
