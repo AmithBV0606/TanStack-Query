@@ -39,3 +39,9 @@
 - It allows React Query to determine if the data in the cache is associated with a particular request.
 
 - It is used to cache the data with a specific key and refetch or update data when certain dependencies change.
+
+### Note :
+
+- **useQuery** : Fetches and reads data (GET requests) from an API and automatically caches the result.
+
+- **useMutation** : Used for creating, updating or deleting data (POST, PUT, DELETE requests) and allows triggering manual side effects.
