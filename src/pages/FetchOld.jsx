@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { fetchPosts } from "../API/api";
 
 export default function FetchOld() {
+  // States for posts data, loading and error.
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
+  // Fetch posts data function :
   const getPostsData = async () => {
     try {
       const res = await fetchPosts();
@@ -22,13 +24,10 @@ export default function FetchOld() {
     getPostsData();
   }, []);
 
-  if (isLoading) {
+  // Conditional rendering based on loading and error state.
+  if (isLoading)
     return <div className="text-center">Page is loading......</div>;
-  }
-
-  if (isError) {
-    return <div>Error has occurred....</div>;
-  }
+  if (isError) return <div className="text-center">Error has occurred....</div>;
 
   return (
     <div className="h-auto">

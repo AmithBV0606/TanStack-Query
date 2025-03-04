@@ -9,25 +9,30 @@ export default function FetchRQ() {
       return res.status === 200 ? res.data : [];
     } catch (error) {
       console.log("Error is : ", error);
-      return [];
+      // return [];
     }
   };
 
-  const { data } = useQuery({
+  const { data, isLoading, isError, error } = useQuery({
     queryKey: ["posts"], // useState
     queryFn: getPostsData, //useEffect
   });
 
+  // Conditional rendering based on loading and error state.
+  if (isLoading)
+    return <div className="text-center">Page is loading......</div>;
+  if (isError) return <div className="text-center">Error : {error.message || "Error has occurred....."}</div>;
+
   return (
     <div className="">
-      <ul className="mx-96">
+      <ul className="px-14 grid grid-cols-3">
         {data?.map((post) => {
           const { id, title, body } = post;
 
           return (
             <li
               key={id}
-              className="space-y-6 my-4 p-6 border-l-2 border-white rounded-xl bg-gray-700 text-start"
+              className="space-y-6 my-6 p-6 max-w-[500px] border-l-2 border-white rounded-xl bg-gray-700 text-start"
             >
               <p className="text-xl font-bold">{title}</p>
               <p className="text-sm font-light">{body}</p>
