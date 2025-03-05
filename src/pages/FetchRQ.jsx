@@ -17,7 +17,9 @@ export default function FetchRQ() {
     queryKey: ["posts"], // useState
     queryFn: getPostsData, //useEffect
     // gcTime: 5000,
-    staleTime: 5000,
+    // staleTime: 5000,
+    // refetchInterval: 2000,
+    // refetchIntervalInBackground: true
   });
 
   // Conditional rendering based on loading and error state.
@@ -27,7 +29,7 @@ export default function FetchRQ() {
 
   return (
     <div className="">
-      <ul className="px-14 grid grid-cols-3">
+      <ul className="px-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         {data?.map((post) => {
           const { id, title, body } = post;
 
