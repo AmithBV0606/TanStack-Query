@@ -19,6 +19,10 @@ export default function Header() {
           <li>
             <NavLink to={"/rq"} className={"hover:underline"}>FetcRQ</NavLink>
           </li>
+
+          <li>
+            <NavLink to={"/pagination"} className={"hover:underline"}>Pagination</NavLink>
+          </li>
         </ul>
       </div>
     </header>

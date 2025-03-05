@@ -24,3 +24,13 @@ export const fetchIndividualPost = async (id) => {
     console.log(error);
   }
 };
+
+// Pagination
+export const fetchThreePosts = async (pageNumber) => {
+  try {
+    const res = await api.get(`/posts?_start=${pageNumber}&_limit=3`);
+    return res.status === 200 ? res.data : [];
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -7,6 +7,7 @@ import FetchRQ from "./pages/FetchRQ";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import FetchIndividual from "./pages/FetchIndividual";
+import Pagination from "./pages/Pagination";
 
 // Creating routes
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path:"/rq/:id",
         element: <FetchIndividual />
+      },
+      {
+        path:"/pagination",
+        element: <Pagination />
       }
     ],
   },
