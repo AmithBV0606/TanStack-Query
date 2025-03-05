@@ -1,16 +1,26 @@
-import React from 'react'
-import axios from 'axios'
+import React from "react";
+import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://jsonplaceholder.typicode.com",
+  baseURL: "https://jsonplaceholder.typicode.com",
 });
 
-// Fetch the data 
+// Fetch the data
 export const fetchPosts = () => {
-    return api.get("/posts");
-}
+  return api.get("/posts");
+};
 
 // export const fetchPosts = async () => {
 //     const res = await api.get("/posts");
 //     return res.status === 200 ? res.data : [];
 // }
+
+// Fech individual post
+export const fetchIndividualPost = async (id) => {
+  try {
+    const res = await api.get(`/posts/${id}`);
+    return res.status === 200 ? res.data : [];
+  } catch (error) {
+    console.log(error);
+  }
+};

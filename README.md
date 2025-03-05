@@ -90,3 +90,32 @@ The default staleTime is 0, meaning data becomes stale immediately after being f
 - Used when you want to fetch the data even in background or you are in another tab.
 
 - If you want to continue polling even when the component is not mounted, you can use the `refetchIntervalInBackground` option.
+
+### `queryKey` : 
+
+- The queryKey is an essential part of prefetching queries in TanStack Query. 
+
+- It uniquely identifies the query and is used to cache and manage the state of the query. 
+
+- When prefetching, you can use the queryKey to specify which data you want to prefetch.
+
+**Here's an example of how you can use queryKey in a prefetching scenario:**
+
+```JavaScript
+const queryClient = useQueryClient();
+
+const prefetchArticleComments = async (id) => {
+  await queryClient.prefetchQuery({
+    queryKey: ['article-comments', id],
+    queryFn: getArticleCommentsById,
+  });
+};
+```
+
+- In this example, ['article-comments', id] is the queryKey used to identify the query for fetching article comments. 
+
+- The queryFn is the function that fetches the data, and prefetchQuery is used to initiate the prefetching process.
+
+- You can use this approach to prefetch data during component lifecycle events, user interactions, or other scenarios where you anticipate needing the data soon. 
+
+- This helps in reducing the request waterfall and improving the performance of your application.
