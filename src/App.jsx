@@ -11,6 +11,7 @@ import Pagination from "./pages/Pagination";
 import DeleteOp from "./pages/DeleteOp";
 import UpdateOp from "./pages/UpdateOp";
 import InfiniteScroll from "./pages/InfiniteScroll";
+import IntersectionObserver from "./pages/IntersectionObserver";
 
 // Creating routes
 const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "/infinite",
         element: <InfiniteScroll />
+      },
+      {
+        path: "/intersection-observer",
+        element: <IntersectionObserver />
       }
     ],
   },

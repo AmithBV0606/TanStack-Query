@@ -35,6 +35,10 @@ export default function Header() {
           <li>
             <NavLink to={"/infinite"} className={"hover:underline"}>Infinite Scroll</NavLink>
           </li>
+
+          <li>
+            <NavLink to={"/intersection-observer"} className={"hover:underline"}>Intersection Observer</NavLink>
+          </li>
         </ul>
       </div>
     </header>
