@@ -162,3 +162,19 @@ const mutation = useMutation(mutationFn, {
 - `queryClient.setQueryData` is used to update the cached data for a specific query. In this case, it's the query with the key["post", pageNumber], which lickely represents the list of posts on the current page. 
 
 - setQueryData is the method which helps us to access the cached data.
+
+### Scroll Events
+
+- **window.innerHeight :** The height of the visible part of the webpage (the viewport).
+
+- **window.scrollY :** The amount of pixels the user has scrolled down the page.
+
+- **document.documentElement.scrollHeight :** The total height of the webpage, including the part not visible without scrolling.
+
+- When the sum of `window.innerHeight` and `window.scrollY` is approximately equal to `document.documentElement.scrollHeight - 1`, the user is near the bottom of the page.
+
+- **getNextPageParam :** Calculate the page number.
+
+- **pageParam :** Page number
+
+<img src="./assets/Pic-2.png" />

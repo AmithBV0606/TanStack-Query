@@ -10,6 +10,7 @@ import FetchIndividual from "./pages/FetchIndividual";
 import Pagination from "./pages/Pagination";
 import DeleteOp from "./pages/DeleteOp";
 import UpdateOp from "./pages/UpdateOp";
+import InfiniteScroll from "./pages/InfiniteScroll";
 
 // Creating routes
 const router = createBrowserRouter([
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/update-op",
         element: <UpdateOp />
+      },
+      {
+        path: "/infinite",
+        element: <InfiniteScroll />
       }
     ],
   },

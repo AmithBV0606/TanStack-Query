@@ -31,6 +31,10 @@ export default function Header() {
           <li>
             <NavLink to={"/update-op"} className={"hover:underline"}>UPDATE Op</NavLink>
           </li>
+
+          <li>
+            <NavLink to={"/infinite"} className={"hover:underline"}>Infinite Scroll</NavLink>
+          </li>
         </ul>
       </div>
     </header>
