@@ -40,3 +40,9 @@ export const deletePost = async (id) => {
   const res = await api.delete(`/posts/${id}`);
   return res;
 };
+
+// Mutation function to Updating the post
+export const updatePost = async (id) => {
+  const res = await api.patch(`/posts/${id}`, { title: "I have updated!" });
+  return res;
+};

@@ -160,3 +160,5 @@ const mutation = useMutation(mutationFn, {
 ### Accessing the local cache data : 
 
 - `queryClient.setQueryData` is used to update the cached data for a specific query. In this case, it's the query with the key["post", pageNumber], which lickely represents the list of posts on the current page. 
+
+- setQueryData is the method which helps us to access the cached data.
