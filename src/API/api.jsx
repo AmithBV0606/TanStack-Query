@@ -34,3 +34,9 @@ export const fetchThreePosts = async (pageNumber) => {
     console.log(error);
   }
 };
+
+// Mutation function to delete the post
+export const deletePost = async (id) => {
+  const res = await api.delete(`/posts/${id}`);
+  return res;
+};

@@ -119,3 +119,44 @@ const prefetchArticleComments = async (id) => {
 - You can use this approach to prefetch data during component lifecycle events, user interactions, or other scenarios where you anticipate needing the data soon. 
 
 - This helps in reducing the request waterfall and improving the performance of your application.
+
+### useMutation Hook : 
+
+- It is used to modify or send data to a server (Create, Update or Delete operations).
+
+- `useQuery` hook is used to fetch and cache data from a server (read operation).
+
+- The `useMutation` hook is part of React Query and is used for operations that modify data, like Create, Update, and Delete (CRUD operations).
+
+Syntax:
+
+```js
+const mutation = useMutation(mutationFn, {
+    // Optional configuration options
+});
+```
+
+- We can provide various configuration options to customize the behavior of the mutation, such as:
+
+  - `onSuccess`: A callback function that runs when the mutation is successful.
+  - `onError`: A callback function that runs if the mutation fails.
+  - `onSettled`: A callback function that runs regardless of success or failure.
+  - `f`: A unique key to identify the mutation in the cache.
+
+### Mutate() : 
+
+- The `mutate()` function is used to execute the mutation in React Query.
+
+- The process is the same whether you're:
+
+  - Deleting data
+  - Updating data
+  - Creating new data
+
+- When you call` .mutate()`, it tells React Query to run the mutation function defined inside the useMutation hook. 
+
+- This is needed because the mutation is an action that changes data, unlike queries, which are used to fetch data and are often auto-executed.
+
+### Accessing the local cache data : 
+
+- `queryClient.setQueryData` is used to update the cached data for a specific query. In this case, it's the query with the key["post", pageNumber], which lickely represents the list of posts on the current page. 

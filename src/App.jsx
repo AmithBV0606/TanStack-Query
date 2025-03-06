@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import FetchIndividual from "./pages/FetchIndividual";
 import Pagination from "./pages/Pagination";
+import DeleteOp from "./pages/DeleteOp";
 
 // Creating routes
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path:"/pagination",
         element: <Pagination />
+      },
+      {
+        path:"/delete-op",
+        element: <DeleteOp />
       }
     ],
   },

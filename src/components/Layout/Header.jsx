@@ -7,7 +7,7 @@ export default function Header() {
       <div className='flex justify-between items-center px-40 py-10'>
         <NavLink to={"/"} className={"text-2xl border-2 bg-green-800 p-2 rounded-xl"}>React-Query</NavLink>
 
-        <ul className='flex items-center gap-6'>
+        <ul className='flex items-center gap-4'>
           <li>
             <NavLink to={"/"} className={"hover:underline"}>Home</NavLink>
           </li>
@@ -22,6 +22,10 @@ export default function Header() {
 
           <li>
             <NavLink to={"/pagination"} className={"hover:underline"}>Pagination</NavLink>
+          </li>
+
+          <li>
+            <NavLink to={"/delete-op"} className={"hover:underline"}>DELETE Op</NavLink>
           </li>
         </ul>
       </div>
