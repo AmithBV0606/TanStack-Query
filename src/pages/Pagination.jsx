@@ -39,7 +39,9 @@ export default function Pagination() {
         >
           Prev
         </button>
+
         <span className="text-2xl">{(pageNumber / 3) + 1}</span>
+        
         <button
           className="bg-pink-600 text-white py-2 px-4 rounded-lg ml-4 cursor-pointer"
           onClick={handleIncrement}
@@ -48,15 +50,15 @@ export default function Pagination() {
         </button>
       </div>
 
-      <div className="max-h-[750px] mx-36 overflow-x-hidden overscroll-y-scroll">
-        <ul className="px-80">
+      <div className="flex justify-center items-center">
+        <ul className="">
           {data?.map((post) => {
             const { id, title, body } = post;
 
             return (
               <li
                 key={id}
-                className="my-6 p-6 max-w-[1500px] border-l-2 border-pink-500 rounded-xl bg-gray-700 text-start"
+                className="my-6 p-6 max-w-[900px] border-l-2 border-pink-500 rounded-xl bg-gray-700 text-start"
               >
                 <NavLink to={`/rq/${id}`} className={"space-y-6"}>
                   <p className="text-xl font-bold">{id}</p>
